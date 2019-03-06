@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 
 import java.io.*;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class Test1StandardSerialization {
 
     @Test
@@ -25,10 +27,10 @@ public class Test1StandardSerialization {
         try (FileInputStream fileIn = new FileInputStream("/tmp/person.ser");
              ObjectInputStream in = new ObjectInputStream(fileIn)) {
             Person anotherPerson = (Person) in.readObject();
-            Assertions.assertEquals(person.phoneNumber, anotherPerson.phoneNumber);
-            Assertions.assertEquals(person.name, anotherPerson.name);
-            Assertions.assertEquals(person.surname, anotherPerson.surname);
-            Assertions.assertEquals(person.sessionIdentifier, anotherPerson.sessionIdentifier);
+            assertEquals(person.phoneNumber, anotherPerson.phoneNumber);
+            assertEquals(person.name, anotherPerson.name);
+            assertEquals(person.surname, anotherPerson.surname);
+            assertEquals(person.sessionIdentifier, anotherPerson.sessionIdentifier);
         } catch (IOException | ClassNotFoundException e) {
             Assertions.fail(e);
         }
