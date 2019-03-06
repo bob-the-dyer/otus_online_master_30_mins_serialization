@@ -15,7 +15,6 @@ public class Test1StandardSerialization {
         person.surname = "Pupkin";
         person.sessionIdentifier = person.phoneNumber + person.name + person.surname;
 
-
         try (FileOutputStream fileOut = new FileOutputStream("/tmp/person.ser");
              ObjectOutputStream out = new ObjectOutputStream(fileOut)) {
             out.writeObject(person);
@@ -33,7 +32,6 @@ public class Test1StandardSerialization {
         } catch (IOException | ClassNotFoundException e) {
             Assertions.fail(e);
         }
-
 
     }
 

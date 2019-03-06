@@ -39,7 +39,6 @@ public class Test3XStreamSerialization {
             Assertions.fail(e);
         }
 
-
     }
 
 }
